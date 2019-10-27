@@ -1,3 +1,9 @@
+wasta-wine (0.1.1) bionic; urgency=medium
+
+  * new version of wine built from source to install to /opt/wasta-wine
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Sun, 27 Oct 2019 12:37:07 +0300
+
 wasta-wine (0.1.0) bionic; urgency=medium
 
   * initial release

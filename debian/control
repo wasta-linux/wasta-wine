@@ -8,6 +8,6 @@ Homepage: https://github.com/wasta-linux/wasta-wine
 
 Package: wasta-wine
 Architecture: all
-Depends: libc6, ${shlibs:Depends}, ${misc:Depends}
+Depends: libasound2-plugins:i386, libc6:i386, liblcms2-2:i386, libgstreamer-plugins-base1.0-0:i386, libmpg123-0:i386, libpulse0:i386, ${shlibs:Depends}, ${misc:Depends}
 Description: Wasta packaging of Wine for app compatibility
  Patched version of wine 4.18 for Logos compatibility.

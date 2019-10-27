@@ -87,7 +87,7 @@ processes.
 Specifies the path and name of the
 .B wineserver
 binary. If not set, Wine will try to load
-.IR /opt/wine-devel/bin/wineserver ,
+.IR /opt/wasta-wine/bin/wineserver ,
 and if this doesn't exist it will then look for a file named
 "wineserver" in the path and in a few other likely locations.
 .TP
@@ -96,7 +96,7 @@ Specifies the path and name of the
 .B wine
 binary to use to launch new Windows processes. If not set, Wine will
 try to load
-.IR /opt/wine-devel/bin/wine ,
+.IR /opt/wasta-wine/bin/wine ,
 and if this doesn't exist it will then look for a file named "wine" in
 the path and in a few other likely locations.
 .TP
@@ -156,7 +156,7 @@ applications. This is a list of directories separated by ":". In
 addition to any directory specified in
 .BR WINEDLLPATH ,
 Wine will also look in
-.IR /opt/wine-devel/lib/wine .
+.IR /opt/wasta-wine/lib/wine .
 .TP
 .B WINEDLLOVERRIDES
 Defines the override type and load order of dlls used in the loading
@@ -246,19 +246,19 @@ Set the MIDI (sequencer) device. Default
 .IR /dev/sequencer .
 .SH FILES
 .TP
-.I /opt/wine-devel/bin/wine
+.I /opt/wasta-wine/bin/wine
 The Wine program loader.
 .TP
-.I /opt/wine-devel/bin/wineconsole
+.I /opt/wasta-wine/bin/wineconsole
 The Wine program loader for CUI (console) applications.
 .TP
-.I /opt/wine-devel/bin/wineserver
+.I /opt/wasta-wine/bin/wineserver
 The Wine server
 .TP
-.I /opt/wine-devel/bin/winedbg
+.I /opt/wasta-wine/bin/winedbg
 The Wine debugger
 .TP
-.I /opt/wine-devel/lib/wine
+.I /opt/wasta-wine/lib/wine
 Directory containing Wine shared libraries
 .TP
 .I $WINEPREFIX/dosdevices

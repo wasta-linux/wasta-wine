@@ -4,3 +4,4 @@ wasta-wine: duplicate-font-file
 wasta-wine: portable-executable-missing-security-features
 wasta-wine: shlib-with-non-pic-code
 wasta-wine: statically-linked-binary
+wasta-wine: unstripped-binary-or-object

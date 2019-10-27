@@ -86,7 +86,7 @@ totalement indépendantes.
 Spécifie le chemin et le nom de l'exécutable
 .BR wineserver .
 Si cette variable n'est pas définie, Wine essaiera de charger
-.I /opt/wine-devel/bin/wineserver
+.I /opt/wasta-wine/bin/wineserver
 ou, à défaut, un fichier nommé
 « wineserver » dans le chemin système ou quelques autres emplacements potentiels.
 .TP
@@ -95,7 +95,7 @@ Spécifie le chemin et le nom de l'exécutable
 .B wine
 à utiliser pour exécuter de nouveaux processus Windows. Si pas définie, Wine
 essaiera de charger
-.I /opt/wine-devel/bin/wine
+.I /opt/wasta-wine/bin/wine
 ou, à défaut, un fichier nommé
 « wine » dans le chemin système ou quelques autres emplacements potentiels.
 .TP
@@ -153,7 +153,7 @@ Winelib. C'est une liste de répertoires séparés par des « : ». En plus de
 répertoires spécifiés dans
 .BR WINEDLLPATH ,
 Wine utilisera aussi le répertoire
-.IR /opt/wine-devel/lib/wine .
+.IR /opt/wasta-wine/lib/wine .
 .TP
 .B WINEDLLOVERRIDES
 Définit le type de remplacement et l'ordre de chargement des DLL utilisées lors du
@@ -233,19 +233,19 @@ Définit le périphérique pour le séquenceur MIDI, par défaut
 .IR /dev/sequencer .
 .SH FICHIERS
 .TP
-.I /opt/wine-devel/bin/wine
+.I /opt/wasta-wine/bin/wine
 Le chargeur de programme de Wine.
 .TP
-.I /opt/wine-devel/bin/wineconsole
+.I /opt/wasta-wine/bin/wineconsole
 Le chargeur de programme de Wine pour les applications en mode console (CUI).
 .TP
-.I /opt/wine-devel/bin/wineserver
+.I /opt/wasta-wine/bin/wineserver
 Le serveur Wine.
 .TP
-.I /opt/wine-devel/bin/winedbg
+.I /opt/wasta-wine/bin/winedbg
 Le débogueur de Wine.
 .TP
-.I /opt/wine-devel/lib/wine
+.I /opt/wasta-wine/lib/wine
 Répertoire contenant les bibliothèques partagées de Wine.
 .TP
 .I $WINEPREFIX/dosdevices

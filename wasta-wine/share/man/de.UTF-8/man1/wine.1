@@ -87,7 +87,7 @@ beim Starten verschiedener
 Gibt den Ort der
 .B wineserver
 -Anwendung an. Wenn diese Variable nicht gesetzt ist, wird versucht,
-.B /opt/wine-devel/bin/wineserver
+.B /opt/wasta-wine/bin/wineserver
 zu laden. Wenn auch dies nicht funktioniert, sucht
 .B wine
 in $PATH und anderen Orten nach wineserver.
@@ -97,7 +97,7 @@ Gibt den Ort der
 .B wine
 -Anwendung an, die genutzt wird, um Windows-Programme zu laden. Wenn
  diese Variable nicht gesetzt ist, wird versucht,
-.B /opt/wine-devel/bin/wine
+.B /opt/wasta-wine/bin/wine
 zu laden. Wenn auch dies nicht funktioniert, wird in $PATH und anderen
 Orten nach wine gesucht.
 .TP
@@ -155,7 +155,7 @@ im Wine-Benutzerhandbuch.
 Gibt den Pfad/die Pfade an, in denen wine nach eigenen DLLs und
 Winelib-Anwendungen sucht. Die Einträge der Liste werden mit einem ":"
 getrennt. Zusätzlich wird noch in
-.B /opt/wine-devel/lib/wine
+.B /opt/wasta-wine/lib/wine
 gesucht.
 .TP
 .I WINEDLLOVERRIDES
@@ -228,27 +228,27 @@ MIDI-Sequencergerät festlegen. Standard:
 .BR /dev/sequencer .
 .SH DATEIEN
 .TP
-.I /opt/wine-devel/bin/wine
+.I /opt/wasta-wine/bin/wine
 Der
 .B wine
 -Programmstarter
 .TP
-.I /opt/wine-devel/bin/wineconsole
+.I /opt/wasta-wine/bin/wineconsole
 Der
 .B wine
 -Programmstarter für Konsolenapplikationen (CLI)
 .TP
-.I /opt/wine-devel/bin/wineserver
+.I /opt/wasta-wine/bin/wineserver
 Der
 .B wine
 -Server
 .TP
-.I /opt/wine-devel/bin/winedbg
+.I /opt/wasta-wine/bin/winedbg
 Der
 .B wine
 -Debugger
 .TP
-.I /opt/wine-devel/lib/wine
+.I /opt/wasta-wine/lib/wine
 Der Ordner mit den gemeinsamen DLLs von
 .B wine
 .TP

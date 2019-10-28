@@ -1,3 +1,10 @@
+wasta-wine (0.1.7) bionic; urgency=medium
+
+  * reverting to "all" architecture, seeing if able to be built
+    at launchpad
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Mon, 28 Oct 2019 17:52:48 +0300
+
 wasta-wine (0.1.6) bionic; urgency=medium
 
   * attempting to get around .so being removed by launchpad by

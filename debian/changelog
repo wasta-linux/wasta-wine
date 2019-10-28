@@ -1,3 +1,12 @@
+wasta-wine (0.1.6) bionic; urgency=medium
+
+  * attempting to get around .so being removed by launchpad by
+    renaming files to .so-wasta and having postinst move back
+    to .so. and then since names will have changed the prerm will
+    remove the entire /opt/wasta-wine folder to keep it simple
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Mon, 28 Oct 2019 16:40:24 +0300
+
 wasta-wine (0.1.5) bionic; urgency=medium
 
   * debian/control: attempting to set to i386 only to see if it

@@ -1,3 +1,11 @@
+wasta-wine (0.1.5) bionic; urgency=medium
+
+  * debian/control: attempting to set to i386 only to see if it
+    will address the problem of the 32-bit binaries being removed
+    from the .deb at launchpad.
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Mon, 28 Oct 2019 15:59:06 +0300
+
 wasta-wine (0.1.4) bionic; urgency=medium
 
   * removing +x from wasta-wine/lib/wine executables

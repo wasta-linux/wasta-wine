@@ -1,3 +1,9 @@
+wasta-wine (0.1.2) bionic; urgency=medium
+
+  * version bump to see if new .deb includes ntdll.dll.so
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Mon, 28 Oct 2019 11:49:46 +0300
+
 wasta-wine (0.1.1) bionic; urgency=medium
 
   * new version of wine built from source to install to /opt/wasta-wine

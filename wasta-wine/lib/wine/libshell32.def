@@ -321,7 +321,7 @@ EXPORTS
   SHBrowseForFolderW@4 @276
   SHChangeNotify@16 @277
   SHChangeNotifySuspendResume@0 @278 PRIVATE
-  SHCreateQueryCancelAutoPlayMoniker@4 @279
+  SHCreateDataObject@24 @279
   SHCreateDefaultContextMenu@12 @280
   SHCreateDirectoryExA@12 @281
   SHCreateDirectoryExW@12 @282
@@ -330,139 +330,140 @@ EXPORTS
   SHCreateItemInKnownFolder@20 @285
   SHCreateItemFromRelativeName@20 @286
   SHCreateProcessAsUserW@0 @287 PRIVATE
-  SHCreateShellItem@16 @288
-  SHCreateShellItemArray@20 @289
-  SHCreateShellItemArrayFromDataObject@12 @290
-  SHCreateShellItemArrayFromShellItem@12 @291
-  SHCreateShellItemArrayFromIDLists@12 @292
-  SHEmptyRecycleBinA@12 @293
-  SHEmptyRecycleBinW@12 @294
-  SHEnumerateUnreadMailAccountsW@16 @295
-  SHExtractIconsW@32=user32.PrivateExtractIconsW @296
-  SHFileOperation@4=SHFileOperationA @297
-  SHFileOperationA@4 @298
-  SHFileOperationW@4 @299
-  SHFormatDrive@16 @300
-  SHFreeNameMappings@4 @301
-  SHGetDataFromIDListA@20 @302
-  SHGetDataFromIDListW@20 @303
-  SHGetDesktopFolder@4 @304
-  SHGetDiskFreeSpaceA@16=kernel32.GetDiskFreeSpaceExA @305
-  SHGetDiskFreeSpaceExA@16=kernel32.GetDiskFreeSpaceExA @306
-  SHGetDiskFreeSpaceExW@16=kernel32.GetDiskFreeSpaceExW @307
-  SHGetFileInfo@20=SHGetFileInfoA @308
-  SHGetFileInfoA@20 @309
-  SHGetFileInfoW@20 @310
-  SHGetFolderLocation@20 @311
-  SHGetFolderPathA@20 @312
-  SHGetFolderPathEx@20 @313
-  SHGetFolderPathAndSubDirA@24 @314
-  SHGetFolderPathAndSubDirW@24 @315
-  SHGetFolderPathW@20 @316
-  SHGetFreeDiskSpace@0 @317 PRIVATE
-  SHGetIconOverlayIndexA@8 @318
-  SHGetIconOverlayIndexW@8 @319
-  SHGetIDListFromObject@8 @320
-  SHGetInstanceExplorer@4=shcore.GetProcessReference @321
-  SHGetItemFromDataObject@16 @322
-  SHGetItemFromObject@12 @323
-  SHGetKnownFolderIDList@16 @324
-  SHGetKnownFolderItem@20 @325
-  SHGetKnownFolderPath@16 @326
-  SHGetLocalizedName@16 @327
-  SHGetMalloc@4 @328
-  SHGetNameFromIDList@12 @329
-  SHGetNewLinkInfo@20=SHGetNewLinkInfoA @330
-  SHGetPathFromIDList@8=SHGetPathFromIDListA @331
-  SHGetPathFromIDListA@8 @332
-  SHGetPathFromIDListEx@16 @333
-  SHGetPathFromIDListW@8 @334
-  SHGetPropertyStoreForWindow@12 @335
-  SHGetPropertyStoreFromParsingName@20 @336
-  SHGetSettings@8 @337
-  SHGetSpecialFolderLocation@12 @338
-  SHGetSpecialFolderPathA@16 @339
-  SHGetSpecialFolderPathW@16 @340
-  SHGetStockIconInfo@12 @341
-  SHHelpShortcuts_RunDLL@16=SHHelpShortcuts_RunDLLA @342
-  SHHelpShortcuts_RunDLLA@16 @343
-  SHHelpShortcuts_RunDLLW@16 @344
-  SHInvokePrinterCommandA@0 @345 PRIVATE
-  SHInvokePrinterCommandW@0 @346 PRIVATE
-  SHIsFileAvailableOffline@8 @347
-  SHLoadInProc@4 @348
-  SHLoadNonloadedIconOverlayIdentifiers@0 @349
-  SHMultiFileProperties@8 @350
-  SHOpenFolderAndSelectItems@16 @351
-  SHOpenWithDialog@8 @352
-  SHParseDisplayName@20 @353
-  SHPathPrepareForWriteA@16 @354
-  SHPathPrepareForWriteW@16 @355
-  SHQueryRecycleBinA@8 @356
-  SHQueryRecycleBinW@8 @357
-  SHQueryUserNotificationState@4 @358
-  SHRemoveLocalizedName@4 @359
-  SHSetLocalizedName@12 @360
-  SHSetUnreadMailCountW@12 @361
-  SHUpdateRecycleBinIcon@0 @362
-  SheChangeDirA@4 @363
-  SheChangeDirExA@0 @364 PRIVATE
-  SheChangeDirExW@0 @365 PRIVATE
-  SheChangeDirW@4 @366
-  SheConvertPathW@0 @367 PRIVATE
-  SheFullPathA@0 @368 PRIVATE
-  SheFullPathW@0 @369 PRIVATE
-  SheGetCurDrive@0 @370 PRIVATE
-  SheGetDirA@8 @371
-  SheGetDirExW@0 @372 PRIVATE
-  SheGetDirW@8 @373
-  SheGetPathOffsetW@0 @374 PRIVATE
-  SheRemoveQuotesA@0 @375 PRIVATE
-  SheRemoveQuotesW@0 @376 PRIVATE
-  SheSetCurDrive@0 @377 PRIVATE
-  SheShortenPathA@0 @378 PRIVATE
-  SheShortenPathW@0 @379 PRIVATE
-  ShellAboutA@16 @380
-  ShellAboutW@16 @381
-  ShellExec_RunDLL@16=ShellExec_RunDLLA @382
-  ShellExec_RunDLLA@16 @383
-  ShellExec_RunDLLW@16 @384
-  ShellExecuteA@24 @385
-  ShellExecuteEx@4=ShellExecuteExA @386
-  ShellExecuteExA@4 @387
-  ShellExecuteExW@4 @388
-  ShellExecuteW@24 @389
-  ShellHookProc@12 @390
-  Shell_NotifyIcon@8=Shell_NotifyIconA @391
-  Shell_NotifyIconA@8 @392
-  Shell_NotifyIconW@8 @393
-  Shell_NotifyIconGetRect@8 @394
-  StrChrA@8=shlwapi.StrChrA @395 PRIVATE
-  StrChrIA@8=shlwapi.StrChrIA @396 PRIVATE
-  StrChrIW@8=shlwapi.StrChrIW @397 PRIVATE
-  StrChrW@8=shlwapi.StrChrW @398 PRIVATE
-  StrCmpNA@12=shlwapi.StrCmpNA @399 PRIVATE
-  StrCmpNIA@12=shlwapi.StrCmpNIA @400 PRIVATE
-  StrCmpNIW@12=shlwapi.StrCmpNIW @401 PRIVATE
-  StrCmpNW@12=shlwapi.StrCmpNW @402 PRIVATE
-  StrCpyNA@12=kernel32.lstrcpynA @403 PRIVATE
-  StrCpyNW@12=shlwapi.StrCpyNW @404 PRIVATE
-  StrNCmpA@12=shlwapi.StrCmpNA @405 PRIVATE
-  StrNCmpIA@12=shlwapi.StrCmpNIA @406 PRIVATE
-  StrNCmpIW@12=shlwapi.StrCmpNIW @407 PRIVATE
-  StrNCmpW@12=shlwapi.StrCmpNW @408 PRIVATE
-  StrNCpyA@12=kernel32.lstrcpynA @409 PRIVATE
-  StrNCpyW@12=shlwapi.StrCpyNW @410 PRIVATE
-  StrRChrA@12=shlwapi.StrRChrA @411 PRIVATE
-  StrRChrIA@12=shlwapi.StrRChrIA @412 PRIVATE
-  StrRChrIW@12=shlwapi.StrRChrIW @413 PRIVATE
-  StrRChrW@12=shlwapi.StrRChrW @414 PRIVATE
-  StrRStrA@0 @415 PRIVATE
-  StrRStrIA@12=shlwapi.StrRStrIA @416 PRIVATE
-  StrRStrIW@12=shlwapi.StrRStrIW @417 PRIVATE
-  StrRStrW@0 @418 PRIVATE
-  StrStrA@8=shlwapi.StrStrA @419 PRIVATE
-  StrStrIA@8=shlwapi.StrStrIA @420 PRIVATE
-  StrStrIW@8=shlwapi.StrStrIW @421 PRIVATE
-  StrStrW@8=shlwapi.StrStrW @422 PRIVATE
-  WOWShellExecute@28 @423
+  SHCreateQueryCancelAutoPlayMoniker@4 @288
+  SHCreateShellItem@16 @289
+  SHCreateShellItemArray@20 @290
+  SHCreateShellItemArrayFromDataObject@12 @291
+  SHCreateShellItemArrayFromShellItem@12 @292
+  SHCreateShellItemArrayFromIDLists@12 @293
+  SHEmptyRecycleBinA@12 @294
+  SHEmptyRecycleBinW@12 @295
+  SHEnumerateUnreadMailAccountsW@16 @296
+  SHExtractIconsW@32=user32.PrivateExtractIconsW @297
+  SHFileOperation@4=SHFileOperationA @298
+  SHFileOperationA@4 @299
+  SHFileOperationW@4 @300
+  SHFormatDrive@16 @301
+  SHFreeNameMappings@4 @302
+  SHGetDataFromIDListA@20 @303
+  SHGetDataFromIDListW@20 @304
+  SHGetDesktopFolder@4 @305
+  SHGetDiskFreeSpaceA@16=kernel32.GetDiskFreeSpaceExA @306
+  SHGetDiskFreeSpaceExA@16=kernel32.GetDiskFreeSpaceExA @307
+  SHGetDiskFreeSpaceExW@16=kernel32.GetDiskFreeSpaceExW @308
+  SHGetFileInfo@20=SHGetFileInfoA @309
+  SHGetFileInfoA@20 @310
+  SHGetFileInfoW@20 @311
+  SHGetFolderLocation@20 @312
+  SHGetFolderPathA@20 @313
+  SHGetFolderPathEx@20 @314
+  SHGetFolderPathAndSubDirA@24 @315
+  SHGetFolderPathAndSubDirW@24 @316
+  SHGetFolderPathW@20 @317
+  SHGetFreeDiskSpace@0 @318 PRIVATE
+  SHGetIconOverlayIndexA@8 @319
+  SHGetIconOverlayIndexW@8 @320
+  SHGetIDListFromObject@8 @321
+  SHGetInstanceExplorer@4=shcore.GetProcessReference @322
+  SHGetItemFromDataObject@16 @323
+  SHGetItemFromObject@12 @324
+  SHGetKnownFolderIDList@16 @325
+  SHGetKnownFolderItem@20 @326
+  SHGetKnownFolderPath@16 @327
+  SHGetLocalizedName@16 @328
+  SHGetMalloc@4 @329
+  SHGetNameFromIDList@12 @330
+  SHGetNewLinkInfo@20=SHGetNewLinkInfoA @331
+  SHGetPathFromIDList@8=SHGetPathFromIDListA @332
+  SHGetPathFromIDListA@8 @333
+  SHGetPathFromIDListEx@16 @334
+  SHGetPathFromIDListW@8 @335
+  SHGetPropertyStoreForWindow@12 @336
+  SHGetPropertyStoreFromParsingName@20 @337
+  SHGetSettings@8 @338
+  SHGetSpecialFolderLocation@12 @339
+  SHGetSpecialFolderPathA@16 @340
+  SHGetSpecialFolderPathW@16 @341
+  SHGetStockIconInfo@12 @342
+  SHHelpShortcuts_RunDLL@16=SHHelpShortcuts_RunDLLA @343
+  SHHelpShortcuts_RunDLLA@16 @344
+  SHHelpShortcuts_RunDLLW@16 @345
+  SHInvokePrinterCommandA@0 @346 PRIVATE
+  SHInvokePrinterCommandW@0 @347 PRIVATE
+  SHIsFileAvailableOffline@8 @348
+  SHLoadInProc@4 @349
+  SHLoadNonloadedIconOverlayIdentifiers@0 @350
+  SHMultiFileProperties@8 @351
+  SHOpenFolderAndSelectItems@16 @352
+  SHOpenWithDialog@8 @353
+  SHParseDisplayName@20 @354
+  SHPathPrepareForWriteA@16 @355
+  SHPathPrepareForWriteW@16 @356
+  SHQueryRecycleBinA@8 @357
+  SHQueryRecycleBinW@8 @358
+  SHQueryUserNotificationState@4 @359
+  SHRemoveLocalizedName@4 @360
+  SHSetLocalizedName@12 @361
+  SHSetUnreadMailCountW@12 @362
+  SHUpdateRecycleBinIcon@0 @363
+  SheChangeDirA@4 @364
+  SheChangeDirExA@0 @365 PRIVATE
+  SheChangeDirExW@0 @366 PRIVATE
+  SheChangeDirW@4 @367
+  SheConvertPathW@0 @368 PRIVATE
+  SheFullPathA@0 @369 PRIVATE
+  SheFullPathW@0 @370 PRIVATE
+  SheGetCurDrive@0 @371 PRIVATE
+  SheGetDirA@8 @372
+  SheGetDirExW@0 @373 PRIVATE
+  SheGetDirW@8 @374
+  SheGetPathOffsetW@0 @375 PRIVATE
+  SheRemoveQuotesA@0 @376 PRIVATE
+  SheRemoveQuotesW@0 @377 PRIVATE
+  SheSetCurDrive@0 @378 PRIVATE
+  SheShortenPathA@0 @379 PRIVATE
+  SheShortenPathW@0 @380 PRIVATE
+  ShellAboutA@16 @381
+  ShellAboutW@16 @382
+  ShellExec_RunDLL@16=ShellExec_RunDLLA @383
+  ShellExec_RunDLLA@16 @384
+  ShellExec_RunDLLW@16 @385
+  ShellExecuteA@24 @386
+  ShellExecuteEx@4=ShellExecuteExA @387
+  ShellExecuteExA@4 @388
+  ShellExecuteExW@4 @389
+  ShellExecuteW@24 @390
+  ShellHookProc@12 @391
+  Shell_NotifyIcon@8=Shell_NotifyIconA @392
+  Shell_NotifyIconA@8 @393
+  Shell_NotifyIconW@8 @394
+  Shell_NotifyIconGetRect@8 @395
+  StrChrA@8=shlwapi.StrChrA @396 PRIVATE
+  StrChrIA@8=shlwapi.StrChrIA @397 PRIVATE
+  StrChrIW@8=shlwapi.StrChrIW @398 PRIVATE
+  StrChrW@8=shlwapi.StrChrW @399 PRIVATE
+  StrCmpNA@12=shlwapi.StrCmpNA @400 PRIVATE
+  StrCmpNIA@12=shlwapi.StrCmpNIA @401 PRIVATE
+  StrCmpNIW@12=shlwapi.StrCmpNIW @402 PRIVATE
+  StrCmpNW@12=shlwapi.StrCmpNW @403 PRIVATE
+  StrCpyNA@12=kernel32.lstrcpynA @404 PRIVATE
+  StrCpyNW@12=shlwapi.StrCpyNW @405 PRIVATE
+  StrNCmpA@12=shlwapi.StrCmpNA @406 PRIVATE
+  StrNCmpIA@12=shlwapi.StrCmpNIA @407 PRIVATE
+  StrNCmpIW@12=shlwapi.StrCmpNIW @408 PRIVATE
+  StrNCmpW@12=shlwapi.StrCmpNW @409 PRIVATE
+  StrNCpyA@12=kernel32.lstrcpynA @410 PRIVATE
+  StrNCpyW@12=shlwapi.StrCpyNW @411 PRIVATE
+  StrRChrA@12=shlwapi.StrRChrA @412 PRIVATE
+  StrRChrIA@12=shlwapi.StrRChrIA @413 PRIVATE
+  StrRChrIW@12=shlwapi.StrRChrIW @414 PRIVATE
+  StrRChrW@12=shlwapi.StrRChrW @415 PRIVATE
+  StrRStrA@0 @416 PRIVATE
+  StrRStrIA@12=shlwapi.StrRStrIA @417 PRIVATE
+  StrRStrIW@12=shlwapi.StrRStrIW @418 PRIVATE
+  StrRStrW@0 @419 PRIVATE
+  StrStrA@8=shlwapi.StrStrA @420 PRIVATE
+  StrStrIA@8=shlwapi.StrStrIA @421 PRIVATE
+  StrStrIW@8=shlwapi.StrStrIW @422 PRIVATE
+  StrStrW@8=shlwapi.StrStrW @423 PRIVATE
+  WOWShellExecute@28 @424

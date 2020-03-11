@@ -146,7 +146,7 @@
  *  - Each method is declared as a pointer to function field in the jump table. The implementation
  *    will fill this jump table with appropriate values, probably using a static variable, and
  *    initialize the lpVtbl field to point to this variable.
- *  - The IDirect3D_Xxx macros then just derefence the lpVtbl pointer and use the function pointer
+ *  - The IDirect3D_Xxx macros then just dereference the lpVtbl pointer and use the function pointer
  *    corresponding to the macro name. This emulates the behavior of a virtual table and should be
  *    just as fast.
  *  - This C code should be quite compatible with the Windows headers both for code that uses COM
@@ -287,12 +287,16 @@ typedef enum tagCOINIT
     COINIT_SPEED_OVER_MEMORY  = 0x8  /* Trade memory for speed */
 } COINIT;
 
+DECLARE_HANDLE(CO_MTA_USAGE_COOKIE);
+
 HRESULT WINAPI CoInitialize(LPVOID lpReserved);
 HRESULT WINAPI CoInitializeEx(LPVOID lpReserved, DWORD dwCoInit);
 void WINAPI CoUninitialize(void);
 DWORD WINAPI CoGetCurrentProcess(void);
 HRESULT WINAPI CoGetCurrentLogicalThreadId(GUID *id);
 HRESULT WINAPI CoGetApartmentType(APTTYPE *type, APTTYPEQUALIFIER *qualifier);
+HRESULT WINAPI CoIncrementMTAUsage(CO_MTA_USAGE_COOKIE *cookie);
+HRESULT WINAPI CoDecrementMTAUsage(CO_MTA_USAGE_COOKIE cookie);
 
 HINSTANCE WINAPI CoLoadLibrary(LPOLESTR lpszLibName, BOOL bAutoFree);
 void WINAPI CoFreeAllLibraries(void);
@@ -392,6 +396,7 @@ HRESULT WINAPI CoRegisterChannelHook(REFGUID ExtensionGuid, IChannelHook *pChann
 
 typedef enum tagCOWAIT_FLAGS
 {
+    COWAIT_DEFAULT        = 0x00000000,
     COWAIT_WAITALL        = 0x00000001,
     COWAIT_ALERTABLE      = 0x00000002,
     COWAIT_INPUTAVAILABLE = 0x00000004

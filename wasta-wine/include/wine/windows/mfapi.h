@@ -389,6 +389,7 @@ typedef enum
 #define MFSESSIONCAP_DOES_NOT_USE_NETWORK  0x00000040
 
 HRESULT WINAPI MFAddPeriodicCallback(MFPERIODICCALLBACK callback, IUnknown *context, DWORD *key);
+HRESULT WINAPI MFAllocateSerialWorkQueue(DWORD target_queue, DWORD *queue);
 HRESULT WINAPI MFAllocateWorkQueue(DWORD *queue);
 HRESULT WINAPI MFAllocateWorkQueueEx(MFASYNC_WORKQUEUE_TYPE queue_type, DWORD *queue);
 HRESULT WINAPI MFBeginCreateFile(MF_FILE_ACCESSMODE access_mode, MF_FILE_OPENMODE open_mode, MF_FILE_FLAGS flags,
@@ -451,6 +452,7 @@ HRESULT WINAPI MFUnlockPlatform(void);
 HRESULT WINAPI MFUnlockWorkQueue(DWORD queue);
 HRESULT WINAPI MFTUnregister(CLSID clsid);
 HRESULT WINAPI MFTUnregisterLocal(IClassFactory *factory);
+HRESULT WINAPI MFTUnregisterLocalByCLSID(CLSID clsid);
 HRESULT WINAPI MFGetPluginControl(IMFPluginControl**);
 HRESULT WINAPI MFWrapMediaType(IMFMediaType *original, REFGUID major, REFGUID subtype, IMFMediaType **wrapped);
 HRESULT WINAPI MFUnwrapMediaType(IMFMediaType *wrapped, IMFMediaType **original);

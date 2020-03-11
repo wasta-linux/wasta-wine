@@ -41,6 +41,14 @@
 # endif
 #endif
 
+#ifndef NULL
+#ifdef __cplusplus
+#define NULL  0
+#else
+#define NULL  ((void *)0)
+#endif
+#endif
+
 #ifndef __stdcall
 # ifdef __i386__
 #  ifdef __GNUC__
@@ -137,7 +145,20 @@
 # endif
 #endif
 
+#ifndef _ACRTIMP
+# ifdef _CRTIMP
+#  define _ACRTIMP _CRTIMP
+# elif defined(_MSC_VER)
+#  define _ACRTIMP __declspec(dllimport)
+# elif defined(__MINGW32__) || defined(__CYGWIN__)
+#  define _ACRTIMP __attribute__((dllimport))
+# else
+#  define _ACRTIMP
+# endif
+#endif
+
 #define _ARGMAX 100
+#define _CRT_INT_MAX 0x7fffffff
 
 #ifndef _MSVCRT_LONG_DEFINED
 #define _MSVCRT_LONG_DEFINED

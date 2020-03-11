@@ -1,4 +1,4 @@
-.TH WINEDBG 1 "October 2005" "Wine 4.18" "Wine Developers Manual"
+.TH WINEDBG 1 "October 2005" "Wine 5.3" "Wine Developers Manual"
 .SH NAME
 winedbg \- Wine debugger
 .SH SYNOPSIS
@@ -116,6 +116,9 @@ IDs can be obtained using the \fBinfo\ process\fR command.  Note the
 .IP 
 .IP \fBdetach\fR
 Detach from a Wine-process.
+.IP \fBthread\ \fIN\fR
+Change the current thread to \fIN\fR (its Windows TID, numeric or hexadecimal).
+.IP
 .PP
 \fIHelp commands\fR
 .IP \fBhelp\fR

@@ -91,6 +91,13 @@ typedef struct _KDPC {
   PULONG_PTR  Lock;
 } KDPC, *PKDPC, *RESTRICTED_POINTER PRKDPC;
 
+typedef enum _KDPC_IMPORTANCE {
+  LowImportance,
+  MediumImportance,
+  HighImportance,
+  MediumHighImportance
+} KDPC_IMPORTANCE;
+
 typedef struct _KDEVICE_QUEUE_ENTRY {
   LIST_ENTRY  DeviceListEntry;
   ULONG  SortKey;
@@ -1665,6 +1672,7 @@ static inline void *MmGetSystemAddressForMdlSafe(MDL *mdl, ULONG priority)
         return MmMapLockedPagesSpecifyCache(mdl, KernelMode, MmCached, NULL, FALSE, priority);
 }
 
+void    FASTCALL ObfReferenceObject(void*);
 void      WINAPI ObDereferenceObject(void*);
 USHORT    WINAPI ObGetFilterVersion(void);
 NTSTATUS  WINAPI ObRegisterCallbacks(POB_CALLBACK_REGISTRATION*, void**);
@@ -1685,6 +1693,8 @@ HANDLE    WINAPI PsGetCurrentThreadId(void);
 HANDLE    WINAPI PsGetProcessInheritedFromUniqueProcessId(PEPROCESS);
 BOOLEAN   WINAPI PsGetVersion(ULONG*,ULONG*,ULONG*,UNICODE_STRING*);
 NTSTATUS  WINAPI PsTerminateSystemThread(NTSTATUS);
+
+BOOLEAN   WINAPI RtlIsNtDdiVersionAvailable(ULONG);
 
 NTSTATUS  WINAPI ZwAddBootEntry(PUNICODE_STRING,PUNICODE_STRING);
 NTSTATUS  WINAPI ZwAccessCheckAndAuditAlarm(PUNICODE_STRING,HANDLE,PUNICODE_STRING,PUNICODE_STRING,PSECURITY_DESCRIPTOR,ACCESS_MASK,PGENERIC_MAPPING,BOOLEAN,PACCESS_MASK,PBOOLEAN,PBOOLEAN);

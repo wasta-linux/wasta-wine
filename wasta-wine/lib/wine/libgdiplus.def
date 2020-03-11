@@ -477,7 +477,7 @@ EXPORTS
   GdipRotateTextureTransform@12 @472
   GdipRotateWorldTransform@12 @473
   GdipSaveAdd@8 @474
-  GdipSaveAddImage@0 @475 PRIVATE
+  GdipSaveAddImage@12 @475
   GdipSaveGraphics@8 @476
   GdipSaveImageToFile@16 @477
   GdipSaveImageToStream@16 @478

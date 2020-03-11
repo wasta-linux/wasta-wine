@@ -61,7 +61,7 @@ EXPORTS
   MFCreateSequencerSegmentOffset@0 @56 PRIVATE
   MFCreateSequencerSource@8 @57
   MFCreateSequencerSourceRemoteStream@0 @58 PRIVATE
-  MFCreateSimpleTypeHandler@0 @59 PRIVATE
+  MFCreateSimpleTypeHandler@4 @59
   MFCreateSourceResolver@4=mfplat.MFCreateSourceResolver @60
   MFCreateStandardQualityManager@4 @61
   MFCreateTopoLoader@4 @62
@@ -72,7 +72,7 @@ EXPORTS
   MFCreateTranscodeTopology@0 @67 PRIVATE
   MFCreateUrlmonSchemePlugin@0 @68 PRIVATE
   MFCreateVideoRenderer@0 @69 PRIVATE
-  MFCreateVideoRendererActivate@0 @70 PRIVATE
+  MFCreateVideoRendererActivate@8 @70
   MFCreateWMAEncoderActivate@0 @71 PRIVATE
   MFCreateWMVEncoderActivate@0 @72 PRIVATE
   MFEnumDeviceSources@12 @73

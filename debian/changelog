@@ -1,3 +1,9 @@
+wasta-wine (5.3.0) bionic; urgency=medium
+
+  * rebasing on wine 5.3
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Wed, 11 Mar 2020 15:16:59 +0300
+
 wasta-wine (0.1.8) bionic; urgency=medium
 
   * debian/control: adding 'rename' dependency

@@ -136,7 +136,10 @@ errno_t       __cdecl _get_errno(int*);
 errno_t       __cdecl _set_doserrno(int);
 errno_t       __cdecl _set_errno(int);
 
+#ifndef _CRT_ONEXIT_T_DEFINED
+#define _CRT_ONEXIT_T_DEFINED
 typedef int (__cdecl *_onexit_t)(void);
+#endif
 
 
 int           __cdecl _atodbl(_CRT_DOUBLE*,char*);
@@ -179,9 +182,9 @@ errno_t       __cdecl _ui64toa_s(unsigned __int64,char*,size_t,int);
 char*         __cdecl _ultoa(__msvcrt_ulong,char*,int);
 errno_t       __cdecl _ultoa_s(__msvcrt_ulong,char*,size_t,int);
 
-void          __cdecl _Exit(int) DECLSPEC_NORETURN;
-void          __cdecl _exit(int) DECLSPEC_NORETURN;
-void          __cdecl abort(void) DECLSPEC_NORETURN;
+_ACRTIMP DECLSPEC_NORETURN void __cdecl _Exit(int);
+_ACRTIMP DECLSPEC_NORETURN void __cdecl _exit(int);
+_ACRTIMP DECLSPEC_NORETURN void __cdecl abort(void);
 int           __cdecl abs(int);
 int           __cdecl atexit(void (__cdecl *)(void));
 double        __cdecl atof(const char*);
@@ -195,7 +198,7 @@ div_t  __cdecl div(int,int);
 ldiv_t __cdecl ldiv(__msvcrt_long,__msvcrt_long);
 #endif
 lldiv_t       __cdecl lldiv(__int64,__int64);
-void          __cdecl exit(int) DECLSPEC_NORETURN;
+_ACRTIMP DECLSPEC_NORETURN void __cdecl exit(int);
 void          __cdecl free(void*);
 char*         __cdecl getenv(const char*);
 __msvcrt_long __cdecl labs(__msvcrt_long);
@@ -225,6 +228,8 @@ void          __cdecl qsort(void*,size_t,size_t,int (__cdecl *)(const void*,cons
 typedef void (__cdecl *_invalid_parameter_handler)(const wchar_t*, const wchar_t*, const wchar_t*, unsigned, uintptr_t);
 _invalid_parameter_handler __cdecl _set_invalid_parameter_handler(_invalid_parameter_handler);
 _invalid_parameter_handler __cdecl _get_invalid_parameter_handler(void);
+_ACRTIMP _invalid_parameter_handler __cdecl _get_thread_local_invalid_parameter_handler(void);
+_ACRTIMP _invalid_parameter_handler __cdecl _set_thread_local_invalid_parameter_handler(_invalid_parameter_handler);
 void __cdecl _invalid_parameter(const wchar_t *expr, const wchar_t *func, const wchar_t *file,
                                 unsigned int line, uintptr_t arg);
 

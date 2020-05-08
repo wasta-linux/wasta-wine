@@ -30,6 +30,7 @@
 
 /* FIXME: We suppose that page size is 4096 */
 #undef PAGE_SIZE
+#undef PAGE_SHIFT
 #define PAGE_SIZE   0x1000
 #define PAGE_SHIFT  12
 
@@ -1607,6 +1608,7 @@ void      WINAPI IoGetStackLimits(ULONG_PTR*,ULONG_PTR*);
 void      WINAPI IoInitializeIrp(IRP*,USHORT,CCHAR);
 VOID      WINAPI IoInitializeRemoveLockEx(PIO_REMOVE_LOCK,ULONG,ULONG,ULONG,ULONG);
 void      WINAPI IoInvalidateDeviceRelations(PDEVICE_OBJECT,DEVICE_RELATION_TYPE);
+NTSTATUS  WINAPI IoOpenDeviceRegistryKey(DEVICE_OBJECT*,ULONG,ACCESS_MASK,HANDLE*);
 void      WINAPI IoQueueWorkItem(PIO_WORKITEM,PIO_WORKITEM_ROUTINE,WORK_QUEUE_TYPE,void*);
 NTSTATUS  WINAPI IoRegisterDeviceInterface(PDEVICE_OBJECT,const GUID*,PUNICODE_STRING,PUNICODE_STRING);
 void      WINAPI IoReleaseCancelSpinLock(KIRQL);
@@ -1659,7 +1661,7 @@ PMDL      WINAPI MmAllocatePagesForMdl(PHYSICAL_ADDRESS,PHYSICAL_ADDRESS,PHYSICA
 void      WINAPI MmBuildMdlForNonPagedPool(MDL*);
 void      WINAPI MmFreeNonCachedMemory(PVOID,SIZE_T);
 void *    WINAPI MmGetSystemRoutineAddress(UNICODE_STRING*);
-PVOID     WINAPI MmMapLockedPagesSpecifyCache(PMDL,KPROCESSOR_MODE,MEMORY_CACHING_TYPE,PVOID,ULONG,ULONG);
+PVOID     WINAPI MmMapLockedPagesSpecifyCache(PMDLX,KPROCESSOR_MODE,MEMORY_CACHING_TYPE,PVOID,ULONG,MM_PAGE_PRIORITY);
 MM_SYSTEMSIZE WINAPI MmQuerySystemSize(void);
 void      WINAPI MmProbeAndLockPages(PMDLX, KPROCESSOR_MODE, LOCK_OPERATION);
 void      WINAPI MmUnmapLockedPages(void*, PMDL);

@@ -27,3 +27,4 @@ EXPORTS
   PropVariantToAdsType2@0 @26 PRIVATE
   ConvertSecDescriptorToVariant@0 @27 PRIVATE
   ConvertSecurityDescriptorToSecDes@0 @28 PRIVATE
+  DllGetClassObject@12 @10 PRIVATE

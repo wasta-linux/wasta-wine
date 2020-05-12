@@ -1,3 +1,9 @@
+wasta-wine (4.18.0) bionic; urgency=medium
+
+  * updating verison number to match wine version number
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Tue, 12 May 2020 14:51:51 -0500
+
 wasta-wine (0.1.8) bionic; urgency=medium
 
   * debian/control: adding 'rename' dependency

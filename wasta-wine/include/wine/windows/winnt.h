@@ -23,6 +23,7 @@
 
 #include <basetsd.h>
 #include <guiddef.h>
+#include <winapifamily.h>
 
 #ifndef RC_INVOKED
 #include <ctype.h>
@@ -452,7 +453,7 @@ typedef VOID           *PVOID64;
 typedef BYTE            BOOLEAN,    *PBOOLEAN;
 typedef char            CHAR,       *PCHAR;
 typedef short           SHORT,      *PSHORT;
-#ifdef _MSC_VER
+#ifdef WINE_USE_LONG
 typedef long            LONG,       *PLONG;
 #else
 typedef int             LONG,       *PLONG;
@@ -461,7 +462,7 @@ typedef int             LONG,       *PLONG;
 /* Some systems might have wchar_t, but we really need 16 bit characters */
 #if defined(WINE_UNICODE_NATIVE)
 typedef wchar_t         WCHAR;
-#elif defined(WINE_UNICODE_CHAR16)
+#elif __cpp_unicode_literals >= 200710
 typedef char16_t        WCHAR;
 #else
 typedef unsigned short  WCHAR;
@@ -793,9 +794,16 @@ typedef struct _MEMORY_BASIC_INFORMATION
 #define RTL_FIELD_SIZE(type, field) (sizeof(((type *)0)->field))
 #define RTL_SIZEOF_THROUGH_FIELD(type, field) (FIELD_OFFSET(type, field) + RTL_FIELD_SIZE(type, field))
 
-#define CONTAINING_RECORD(address, type, field) \
-  ((type *)((PCHAR)(address) - offsetof(type, field)))
+#ifdef __GNUC__
+# define CONTAINING_RECORD(address, type, field) ({     \
+   const typeof(((type *)0)->field) *__ptr = (address); \
+   (type *)((PCHAR)__ptr - offsetof(type, field)); })
+#else
+# define CONTAINING_RECORD(address, type, field) \
+   ((type *)((PCHAR)(address) - offsetof(type, field)))
+#endif
 
+#define ARRAYSIZE(x) (sizeof(x) / sizeof((x)[0]))
 #ifdef __WINESRC__
 # define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
 #endif
@@ -922,6 +930,16 @@ typedef enum _HEAP_INFORMATION_CLASS {
 #define PF_ARM_V8_INSTRUCTIONS_AVAILABLE        29
 #define PF_ARM_V8_CRYPTO_INSTRUCTIONS_AVAILABLE 30
 #define PF_ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE  31
+#define PF_RDTSCP_INSTRUCTION_AVAILABLE         32
+#define PF_RDPID_INSTRUCTION_AVAILABLE          33
+#define PF_ARM_V81_ATOMIC_INSTRUCTIONS_AVAILABLE 34
+#define PF_MONITORX_INSTRUCTION_AVAILABLE       35
+#define PF_SSSE3_INSTRUCTIONS_AVAILABLE         36
+#define PF_SSE4_1_INSTRUCTIONS_AVAILABLE        37
+#define PF_SSE4_2_INSTRUCTIONS_AVAILABLE        38
+#define PF_AVX_INSTRUCTIONS_AVAILABLE           39
+#define PF_AVX2_INSTRUCTIONS_AVAILABLE          40
+#define PF_AVX512F_INSTRUCTIONS_AVAILABLE       41
 
 
 /* Execution state flags */
@@ -1048,6 +1066,30 @@ typedef struct _LDT_ENTRY {
     } HighWord;
 } LDT_ENTRY, *PLDT_ENTRY, WOW64_LDT_ENTRY, *PWOW64_LDT_ENTRY;
 
+typedef struct DECLSPEC_ALIGN(16) _M128A {
+    ULONGLONG Low;
+    LONGLONG High;
+} M128A, *PM128A;
+
+typedef struct _XSAVE_FORMAT {
+    WORD ControlWord;        /* 000 */
+    WORD StatusWord;         /* 002 */
+    BYTE TagWord;            /* 004 */
+    BYTE Reserved1;          /* 005 */
+    WORD ErrorOpcode;        /* 006 */
+    DWORD ErrorOffset;       /* 008 */
+    WORD ErrorSelector;      /* 00c */
+    WORD Reserved2;          /* 00e */
+    DWORD DataOffset;        /* 010 */
+    WORD DataSelector;       /* 014 */
+    WORD Reserved3;          /* 016 */
+    DWORD MxCsr;             /* 018 */
+    DWORD MxCsr_Mask;        /* 01c */
+    M128A FloatRegisters[8]; /* 020 */
+    M128A XmmRegisters[16];  /* 0a0 */
+    BYTE Reserved4[96];      /* 1a0 */
+} XSAVE_FORMAT, *PXSAVE_FORMAT;
+
 /* x86-64 context definitions */
 #if defined(__x86_64__)
 
@@ -1066,29 +1108,7 @@ typedef struct _LDT_ENTRY {
 #define EXCEPTION_WRITE_FAULT   1
 #define EXCEPTION_EXECUTE_FAULT 8
 
-typedef struct DECLSPEC_ALIGN(16) _M128A {
-    ULONGLONG Low;
-    LONGLONG High;
-} M128A, *PM128A;
-
-typedef struct _XMM_SAVE_AREA32 {
-    WORD ControlWord;        /* 000 */
-    WORD StatusWord;         /* 002 */
-    BYTE TagWord;            /* 004 */
-    BYTE Reserved1;          /* 005 */
-    WORD ErrorOpcode;        /* 006 */
-    DWORD ErrorOffset;       /* 008 */
-    WORD ErrorSelector;      /* 00c */
-    WORD Reserved2;          /* 00e */
-    DWORD DataOffset;        /* 010 */
-    WORD DataSelector;       /* 014 */
-    WORD Reserved3;          /* 016 */
-    DWORD MxCsr;             /* 018 */
-    DWORD MxCsr_Mask;        /* 01c */
-    M128A FloatRegisters[8]; /* 020 */
-    M128A XmmRegisters[16];  /* 0a0 */
-    BYTE Reserved4[96];      /* 1a0 */
-} XMM_SAVE_AREA32, *PXMM_SAVE_AREA32;
+typedef XSAVE_FORMAT XMM_SAVE_AREA32, *PXMM_SAVE_AREA32;
 
 typedef struct DECLSPEC_ALIGN(16) _CONTEXT {
     DWORD64 P1Home;          /* 000 */
@@ -1282,6 +1302,64 @@ NTSYSAPI PVOID WINAPI RtlVirtualUnwind(ULONG,ULONG64,ULONG64,RUNTIME_FUNCTION*,C
 #define UNW_FLAG_CHAININFO 4
 
 #endif /* __x86_64__ */
+
+#define XSTATE_LEGACY_FLOATING_POINT 0
+#define XSTATE_LEGACY_SSE            1
+#define XSTATE_GSSE                  2
+#define XSTATE_AVX                   XSTATE_GSSE
+#define XSTATE_MPX_BNDREGS           3
+#define XSTATE_MPX_BNDCSR            4
+#define XSTATE_AVX512_KMASK          5
+#define XSTATE_AVX512_ZMM_H          6
+#define XSTATE_AVX512_ZMM            7
+#define XSTATE_IPT                   8
+#define XSTATE_CET_U                 11
+#define XSTATE_LWP                   62
+
+typedef struct _YMMCONTEXT
+{
+    M128A Ymm0;
+    M128A Ymm1;
+    M128A Ymm2;
+    M128A Ymm3;
+    M128A Ymm4;
+    M128A Ymm5;
+    M128A Ymm6;
+    M128A Ymm7;
+    M128A Ymm8;
+    M128A Ymm9;
+    M128A Ymm10;
+    M128A Ymm11;
+    M128A Ymm12;
+    M128A Ymm13;
+    M128A Ymm14;
+    M128A Ymm15;
+}
+YMMCONTEXT, *PYMMCONTEXT;
+
+typedef struct _XSTATE
+{
+    ULONG64 Mask;
+    ULONG64 CompactionMask;
+    ULONG64 Reserved[6];
+    YMMCONTEXT YmmContext;
+} XSTATE, *PXSTATE;
+
+typedef struct _CONTEXT_CHUNK
+{
+    LONG Offset;
+    ULONG Length;
+} CONTEXT_CHUNK, *PCONTEXT_CHUNK;
+
+typedef struct _CONTEXT_EX
+{
+    CONTEXT_CHUNK All;
+    CONTEXT_CHUNK Legacy;
+    CONTEXT_CHUNK XState;
+#ifdef _WIN64
+    ULONG64 align;
+#endif
+} CONTEXT_EX, *PCONTEXT_EX;
 
 /* IA64 context definitions */
 #ifdef __ia64__
@@ -1856,9 +1934,12 @@ NTSYSAPI PVOID WINAPI RtlVirtualUnwind(DWORD,DWORD,DWORD,RUNTIME_FUNCTION*,CONTE
 #define CONTEXT_INTEGER         (CONTEXT_ARM64 | 0x00000002)
 #define CONTEXT_FLOATING_POINT  (CONTEXT_ARM64 | 0x00000004)
 #define CONTEXT_DEBUG_REGISTERS (CONTEXT_ARM64 | 0x00000008)
+#define CONTEXT_ARM64_X18       (CONTEXT_ARM64 | 0x00000010)
 
-#define CONTEXT_FULL (CONTEXT_CONTROL | CONTEXT_INTEGER)
-#define CONTEXT_ALL  (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_FLOATING_POINT | CONTEXT_DEBUG_REGISTERS)
+#define CONTEXT_UNWOUND_TO_CALL 0x20000000
+
+#define CONTEXT_FULL (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_FLOATING_POINT)
+#define CONTEXT_ALL  (CONTEXT_CONTROL | CONTEXT_INTEGER | CONTEXT_FLOATING_POINT | CONTEXT_DEBUG_REGISTERS | CONTEXT_ARM64_X18)
 
 #define EXCEPTION_READ_FAULT    0
 #define EXCEPTION_WRITE_FAULT   1
@@ -2125,7 +2206,7 @@ typedef struct _CONTEXT
 
     DWORD ContextFlags;
     DWORD Fill[2];
-} CONTEXT;
+} CONTEXT, *PCONTEXT;
 
 #endif  /* _MIPS_ */
 
@@ -2237,7 +2318,7 @@ typedef struct
     DWORD Dr5;
     DWORD Dr6;
     DWORD Dr7;
-} CONTEXT;
+} CONTEXT, *PCONTEXT;
 
 typedef struct _STACK_FRAME_HEADER
 {
@@ -2668,6 +2749,13 @@ unsigned __int64 __readgsqword(unsigned long);
 static FORCEINLINE struct _TEB * WINAPI NtCurrentTeb(void)
 {
     return (struct _TEB *)__readgsqword(FIELD_OFFSET(NT_TIB, Self));
+}
+#elif defined(__arm__) && defined(__MINGW32__)
+static FORCEINLINE struct _TEB * WINAPI NtCurrentTeb(void)
+{
+    struct _TEB *teb;
+    __asm__("mrc p15, 0, %0, c13, c0, 2" : "=r" (teb));
+    return teb;
 }
 #else
 extern struct _TEB * WINAPI NtCurrentTeb(void);
@@ -3817,33 +3905,17 @@ typedef struct _IMAGE_RESOURCE_DIRECTORY {
 typedef struct _IMAGE_RESOURCE_DIRECTORY_ENTRY {
 	union {
 		struct {
-#ifdef BITFIELDS_BIGENDIAN
-			unsigned NameIsString:1;
-			unsigned NameOffset:31;
-#else
 			unsigned NameOffset:31;
 			unsigned NameIsString:1;
-#endif
 		} DUMMYSTRUCTNAME;
 		DWORD   Name;
-#ifdef WORDS_BIGENDIAN
-		WORD    __pad;
 		WORD    Id;
-#else
-		WORD    Id;
-		WORD    __pad;
-#endif
 	} DUMMYUNIONNAME;
 	union {
 		DWORD   OffsetToData;
 		struct {
-#ifdef BITFIELDS_BIGENDIAN
-			unsigned DataIsDirectory:1;
-			unsigned OffsetToDirectory:31;
-#else
 			unsigned OffsetToDirectory:31;
 			unsigned DataIsDirectory:1;
-#endif
 		} DUMMYSTRUCTNAME2;
 	} DUMMYUNIONNAME2;
 } IMAGE_RESOURCE_DIRECTORY_ENTRY,*PIMAGE_RESOURCE_DIRECTORY_ENTRY;
@@ -4224,7 +4296,6 @@ typedef enum _TOKEN_INFORMATION_CLASS {
 
 #ifndef _SECURITY_DEFINED
 #define _SECURITY_DEFINED
-
 
 typedef DWORD ACCESS_MASK, *PACCESS_MASK;
 
@@ -6044,6 +6115,7 @@ typedef enum _CM_ERROR_CONTROL_TYPE
 } SERVICE_ERROR_TYPE;
 
 NTSYSAPI SIZE_T WINAPI RtlCompareMemory(const VOID*, const VOID*, SIZE_T);
+NTSYSAPI SIZE_T WINAPI RtlCompareMemoryUlong(VOID*, SIZE_T, ULONG);
 
 #define RtlEqualMemory(Destination, Source, Length) (!memcmp((Destination),(Source),(Length)))
 #define RtlMoveMemory(Destination, Source, Length) memmove((Destination),(Source),(Length))
@@ -6511,6 +6583,8 @@ typedef struct _GROUP_AFFINITY
     WORD Reserved[3];
 } GROUP_AFFINITY, *PGROUP_AFFINITY;
 
+#define ALL_PROCESSOR_GROUPS 0xffff
+
 typedef struct _PROCESSOR_NUMBER
 {
     WORD Group;
@@ -6714,6 +6788,90 @@ typedef enum _PROCESS_MITIGATION_POLICY
     ProcessSideChannelIsolationPolicy,
     MaxProcessMitigationPolicy
 } PROCESS_MITIGATION_POLICY, *PPROCESS_MITIGATION_POLICY;
+
+#ifdef _MSC_VER
+
+BOOLEAN _BitScanForward(unsigned long*,unsigned long);
+BOOLEAN _BitScanReverse(unsigned long*,unsigned long);
+
+#pragma intrinsic(_BitScanForward)
+#pragma intrinsic(_BitScanReverse)
+
+static inline BOOLEAN BitScanForward(DWORD *index, DWORD mask)
+{
+    return _BitScanForward((unsigned long*)index, mask);
+}
+
+static inline BOOLEAN BitScanReverse(DWORD *index, DWORD mask)
+{
+    return _BitScanReverse((unsigned long*)index, mask);
+}
+
+#elif defined(__GNUC__) && ((__GNUC__ > 3) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 3)))
+
+static inline BOOLEAN BitScanForward(DWORD *index, DWORD mask)
+{
+    *index = __builtin_ctz(mask);
+    return mask != 0;
+}
+
+static inline BOOLEAN BitScanReverse(DWORD *index, DWORD mask)
+{
+    *index = 31 - __builtin_clz(mask);
+    return mask != 0;
+}
+
+#else
+
+static inline BOOLEAN BitScanForward(DWORD *index, DWORD mask)
+{
+    unsigned int r = 0;
+    while (r < 31 && !(mask & (1 << r))) r++;
+    *index = r;
+    return mask != 0;
+}
+
+static inline BOOLEAN BitScanReverse(DWORD *index, DWORD mask)
+{
+    unsigned int r = 31;
+    while (r > 0 && !(mask & (1 << r))) r--;
+    *index = r;
+    return mask != 0;
+}
+
+#endif
+
+#ifdef _WIN64
+
+#if defined(_MSC_VER)
+
+#define InterlockedCompareExchange128 _InterlockedCompareExchange128
+static inline unsigned char _InterlockedCompareExchange128(__int64 *dest, __int64 xchg_high, __int64 xchg_low, __int64 *compare);
+#pragma intrinsic(_InterlockedCompareExchange128)
+
+#elif defined(__x86_64__)
+
+static inline unsigned char InterlockedCompareExchange128(__int64 *dest, __int64 xchg_high, __int64 xchg_low, __int64 *compare)
+{
+    unsigned char ret;
+    __asm__ __volatile__( "lock cmpxchg16b %0; setz %b2"
+                          : "=m" (dest[0]), "=m" (dest[1]), "=r" (ret),
+                            "=a" (compare[0]), "=d" (compare[1])
+                          : "m" (dest[0]), "m" (dest[1]), "3" (compare[0]), "4" (compare[1]),
+                            "c" (xchg_high), "b" (xchg_low) );
+    return ret;
+}
+
+#elif defined(__GNUC__)
+
+static inline unsigned char InterlockedCompareExchange128(__int64 *dest, __int64 xchg_high, __int64 xchg_low, __int64 *compare)
+{
+    return __sync_bool_compare_and_swap( (__int128 *)dest, *(__int128 *)compare, ((__int128)xchg_high << 64) | xchg_low );
+}
+
+#endif
+
+#endif /* _WIN64 */
 
 #ifdef __cplusplus
 }

@@ -147,7 +147,7 @@ EXPORTS
   timeEndPeriod@4 @146
   timeGetDevCaps@8 @147
   timeGetSystemTime@8 @148
-  timeGetTime@0=kernel32.GetTickCount @149
+  timeGetTime@0 @149
   timeKillEvent@4 @150
   timeSetEvent@20 @151
   waveInAddBuffer@12 @152

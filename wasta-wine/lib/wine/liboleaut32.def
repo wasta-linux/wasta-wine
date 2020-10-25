@@ -199,9 +199,9 @@ EXPORTS
   VarDecFromStr@16 @197
   VarDecFromDisp@12 @198
   VarDecFromBool@8 @199
-  GetErrorInfo@8=ole32.GetErrorInfo @200
-  SetErrorInfo@8=ole32.SetErrorInfo @201
-  CreateErrorInfo@4=ole32.CreateErrorInfo @202
+  GetErrorInfo@8 @200
+  SetErrorInfo@8 @201
+  CreateErrorInfo@4 @202
   VarDecRound@12 @203
   VarDecCmp@8 @204
   VarI2FromI1@8 @205

@@ -11,7 +11,7 @@ EXPORTS
   ScriptCacheGetHeight@12 @6
   ScriptFreeCache@4 @7
   ScriptGetCMap@24 @8
-  ScriptGetFontAlternateGlyphs@0 @9 PRIVATE
+  ScriptGetFontAlternateGlyphs@40 @9
   ScriptGetFontFeatureTags@32 @10
   ScriptGetFontLanguageTags@28 @11
   ScriptGetFontProperties@12 @12

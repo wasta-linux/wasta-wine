@@ -170,6 +170,14 @@
  *    macro is defined in which case we would not be here.
  */
 
+#undef STDMETHOD
+#undef STDMETHOD_
+#undef PURE
+#undef THIS_
+#undef THIS
+#undef DECLARE_INTERFACE
+#undef DECLARE_INTERFACE_
+
 #if defined(__cplusplus) && !defined(CINTERFACE)
 
 #ifdef COM_STDMETHOD_CAN_THROW
@@ -311,6 +319,8 @@ HRESULT WINAPI CoCreateInstanceEx(REFCLSID      rclsid,
 				  COSERVERINFO* pServerInfo,
 				  ULONG         cmq,
 				  MULTI_QI*     pResults);
+HRESULT WINAPI CoCreateInstanceFromApp(REFCLSID clsid, IUnknown *outer, DWORD clscontext, void *reserved,
+        DWORD count, MULTI_QI *results);
 
 HRESULT WINAPI CoGetInstanceFromFile(COSERVERINFO* pServerInfo, CLSID* pClsid, IUnknown* punkOuter, DWORD dwClsCtx, DWORD grfMode, OLECHAR* pwszName, DWORD dwCount, MULTI_QI* pResults);
 HRESULT WINAPI CoGetInstanceFromIStorage(COSERVERINFO* pServerInfo, CLSID* pClsid, IUnknown* punkOuter, DWORD dwClsCtx, IStorage* pstg, DWORD dwCount, MULTI_QI* pResults);

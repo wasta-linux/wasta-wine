@@ -33,6 +33,14 @@
 #define _WIN64
 #endif
 
+#ifndef _MSVCR_VER
+# define _MSVCR_VER 140
+#endif
+
+#if !defined(_UCRT) && _MSVCR_VER >= 140
+# define _UCRT
+#endif
+
 #if !defined(_MSC_VER) && !defined(__int64)
 # if defined(_WIN64) && !defined(__MINGW64__)
 #   define __int64 long
@@ -92,6 +100,8 @@
 #   define __cdecl __attribute__((pcs("aapcs-vfp")))
 # elif defined(__aarch64__) && defined (__GNUC__)
 #  define __cdecl __attribute__((ms_abi))
+# else
+#  define __cdecl
 # endif
 #endif /* __cdecl */
 

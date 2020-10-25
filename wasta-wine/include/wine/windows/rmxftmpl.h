@@ -1,4 +1,4 @@
-/* File generated automatically from rmxftmpl.x; do not edit */
+/* File generated automatically from include/rmxftmpl.x; do not edit */
 
 #ifndef __WINE_RMXFTMPL_H
 #define __WINE_RMXFTMPL_H

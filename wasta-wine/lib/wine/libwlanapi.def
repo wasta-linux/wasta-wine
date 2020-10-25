@@ -22,7 +22,7 @@ EXPORTS
   WlanIhvControl@0 @17 PRIVATE
   WlanOpenHandle@16 @18
   WlanQueryAutoConfigParameter@0 @19 PRIVATE
-  WlanQueryInterface@0 @20 PRIVATE
+  WlanQueryInterface@28 @20
   WlanReasonCodeToString@0 @21 PRIVATE
   WlanRegisterNotification@28 @22
   WlanRenameProfile@0 @23 PRIVATE

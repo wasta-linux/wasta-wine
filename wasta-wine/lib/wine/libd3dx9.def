@@ -29,7 +29,7 @@ EXPORTS
   D3DXComputeIMTFromTexture@28 @24 PRIVATE
   D3DXComputeNormalMap@24 @25
   D3DXComputeNormals@8 @26
-  D3DXComputeTangent@24 @27 PRIVATE
+  D3DXComputeTangent@24 @27
   D3DXComputeTangentFrame@8 @28 PRIVATE
   D3DXComputeTangentFrameEx@64 @29
   D3DXConcatenateMeshes@32 @30 PRIVATE
@@ -234,7 +234,7 @@ EXPORTS
   D3DXMatrixTranslation@16 @229
   D3DXMatrixTranspose@8 @230
   D3DXOptimizeFaces@20 @231
-  D3DXOptimizeVertices@20 @232 PRIVATE
+  D3DXOptimizeVertices@20 @232
   D3DXPlaneFromPointNormal@12 @233
   D3DXPlaneFromPoints@16 @234
   D3DXPlaneIntersectLine@16 @235

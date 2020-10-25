@@ -512,8 +512,6 @@ int WINAPI __WSAFDIsSet(SOCKET,WS(fd_set)*);
 #endif /* WS_DEFINE_SELECT */
 
 /* we have to define hton/ntoh as macros to avoid conflicts with Unix headers */
-#ifndef USE_WS_PREFIX
-
 #undef htonl
 #undef htons
 #undef ntohl
@@ -550,8 +548,6 @@ static inline ULONG __wine_ulong_swap(ULONG l)
 #define ntohs __wine_ushort_swap
 
 #endif  /* WORDS_BIGENDIAN */
-
-#endif  /* USE_WS_PREFIX */
 
 /*
  * Internet address (old style... should be updated)
@@ -1053,7 +1049,7 @@ int WINAPI WS(setsockopt)(SOCKET,int,int,const char*,int);
 int WINAPI WS(shutdown)(SOCKET,int);
 SOCKET WINAPI WS(socket)(int,int,int);
 
-#if defined(__MINGW32__) || defined (_MSC_VER)
+#if defined(__MINGW32__) || defined (_MSC_VER) || defined(__WINE_USE_MSVCRT)
 /* gethostname is not defined on Unix because of conflicts with unistd.h */
 int WINAPI WS(gethostname)(char*,int);
 #endif

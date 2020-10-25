@@ -7,13 +7,13 @@ EXPORTS
   RtwqAllocateSerialWorkQueue@8 @2
   RtwqAllocateWorkQueue@8 @3
   RtwqBeginRegisterWorkQueueWithMMCSS@24 @4
-  RtwqBeginUnregisterWorkQueueWithMMCSS@0 @5 PRIVATE
+  RtwqBeginUnregisterWorkQueueWithMMCSS@12 @5
   RtwqCancelDeadline@4 @6
   RtwqCancelMultipleWaitingWorkItem@0 @7 PRIVATE
   RtwqCancelWorkItem@8 @8
   RtwqCreateAsyncResult@16 @9
-  RtwqEndRegisterWorkQueueWithMMCSS@0 @10 PRIVATE
-  RtwqEndUnregisterWorkQueueWithMMCSS@0 @11 PRIVATE
+  RtwqEndRegisterWorkQueueWithMMCSS@8 @10
+  RtwqEndUnregisterWorkQueueWithMMCSS@4 @11
   RtwqGetPlatform@0 @12 PRIVATE
   RtwqGetWorkQueueMMCSSClass@12 @13
   RtwqGetWorkQueueMMCSSPriority@8 @14

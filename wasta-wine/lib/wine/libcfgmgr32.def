@@ -84,8 +84,8 @@ EXPORTS
   CM_Get_Device_ID_List_Size_ExW@0 @79 PRIVATE
   CM_Get_Device_ID_Size@12=setupapi.CM_Get_Device_ID_Size @80
   CM_Get_Device_ID_Size_Ex@0 @81 PRIVATE
-  CM_Get_Device_Interface_AliasA@0 @82 PRIVATE
-  CM_Get_Device_Interface_AliasW@0 @83 PRIVATE
+  CM_Get_Device_Interface_AliasA@20=setupapi.CM_Get_Device_Interface_AliasA @82
+  CM_Get_Device_Interface_AliasW@20=setupapi.CM_Get_Device_Interface_AliasW @83
   CM_Get_Device_Interface_Alias_ExA@0 @84 PRIVATE
   CM_Get_Device_Interface_Alias_ExW@0 @85 PRIVATE
   CM_Get_Device_Interface_ListA@0 @86 PRIVATE

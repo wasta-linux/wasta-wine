@@ -71,7 +71,7 @@ EXPORTS
   MFCreateTranscodeSinkActivate@0 @66 PRIVATE
   MFCreateTranscodeTopology@0 @67 PRIVATE
   MFCreateUrlmonSchemePlugin@0 @68 PRIVATE
-  MFCreateVideoRenderer@0 @69 PRIVATE
+  MFCreateVideoRenderer@8 @69
   MFCreateVideoRendererActivate@8 @70
   MFCreateWMAEncoderActivate@0 @71 PRIVATE
   MFCreateWMVEncoderActivate@0 @72 PRIVATE

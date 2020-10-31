@@ -1,5 +1,5 @@
 .\" -*- nroff -*-
-.TH WINE 1 "October 2005" "Wine 4.18" "Windows On Unix"
+.TH WINE 1 "October 2005" "Wine 5.20" "Windows On Unix"
 .SH NAZWA
 wine \- uruchamiaj programy Windowsowe na Uniksie
 .SH SKŁADNIA
@@ -85,7 +85,7 @@ jest możliwe uruchamianie kilka prawdziwie niezależnych procesów
 Określa ścieżkę i nazwę programu binarnego
 .B wineserver
 Jeżeli nie ustawione, Wine będzie próbował załadować
-.BR /opt/wasta-wine/bin/wineserver
+.BR //bin/wineserver
 i jeśli zakończy się to niepowodzeniem to będzie szukał pliku o nazwie
 "wineserver" w podanej ścieżce i kilku innych miejscach prawdopodobnego występowania.
 .TP
@@ -94,7 +94,7 @@ Określa ścieżkę i nazwę programu binarnego
 .B wine
 używanej do uruchamiania nowych procesów Windowsowych. Jeżeli nieustawione, Wine będzie
 próbowało załadować
-.BR /opt/wasta-wine/bin/wine
+.BR //bin/wine
 i jeśli zakończy się to niepowodzeniem to będzie szukał pliku o nazwie "wine" w
 podanej ścieżce i kilku innych miejscach prawdopodobnego występowania.
 .TP
@@ -154,7 +154,7 @@ Winelib. To lista katalogów oddzielonych znakiem ":". W dodatku do
 każdego katalogu określonego w
 .IR WINEDLLPATH ,
 Wine będzie także szukał w katalogu
-.BR /opt/wasta-wine/lib/wine .
+.BR //lib/wine .
 .TP
 .I WINEDLLOVERRIDES
 Definiuje typ nadpisania i kolejność ładowania bibliotek dll użytych do ładowania
@@ -233,24 +233,24 @@ Ustaw urządzanie MIDI (sekwencer). Domyślnie
 .BR /dev/sequencer .
 .SH FILES
 .TP
-.I /opt/wasta-wine/bin/wine
+.I //bin/wine
 Ładowarka programów
 .B wine
 .TP
-.I /opt/wasta-wine/bin/wineconsole
+.I //bin/wineconsole
 Ładowarka programów
 .B wine
 dla aplikacji CUI (konsolowych).
 .TP
-.I /opt/wasta-wine/bin/wineserver
+.I //bin/wineserver
 Serwer
 .B wine
 .TP
-.I /opt/wasta-wine/bin/winedbg
+.I //bin/winedbg
 Debugger
 .B wine
 .TP
-.I /opt/wasta-wine/lib/wine
+.I //lib/wine
 Katalog zawierający współdzielone biblioteki
 .BR wine
 .TP

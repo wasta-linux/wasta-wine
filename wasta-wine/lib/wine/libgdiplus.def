@@ -205,7 +205,7 @@ EXPORTS
   GdipEnumerateMetafileSrcRectDestPointI@0 @200 PRIVATE
   GdipEnumerateMetafileSrcRectDestPoints@36 @201
   GdipEnumerateMetafileSrcRectDestPointsI@0 @202 PRIVATE
-  GdipEnumerateMetafileSrcRectDestRect@0 @203 PRIVATE
+  GdipEnumerateMetafileSrcRectDestRect@32 @203
   GdipEnumerateMetafileSrcRectDestRectI@0 @204 PRIVATE
   GdipFillClosedCurve2@24 @205
   GdipFillClosedCurve2I@24 @206
@@ -303,7 +303,7 @@ EXPORTS
   GdipGetLogFontA@12 @298
   GdipGetLogFontW@12 @299
   GdipGetMatrixElements@8 @300
-  GdipGetMetafileDownLevelRasterizationLimit@0 @301 PRIVATE
+  GdipGetMetafileDownLevelRasterizationLimit@8 @301
   GdipGetMetafileHeaderFromEmf@8 @302
   GdipGetMetafileHeaderFromFile@8 @303
   GdipGetMetafileHeaderFromMetafile@8 @304
@@ -477,7 +477,7 @@ EXPORTS
   GdipRotateTextureTransform@12 @472
   GdipRotateWorldTransform@12 @473
   GdipSaveAdd@8 @474
-  GdipSaveAddImage@0 @475 PRIVATE
+  GdipSaveAddImage@12 @475
   GdipSaveGraphics@8 @476
   GdipSaveImageToFile@16 @477
   GdipSaveImageToStream@16 @478

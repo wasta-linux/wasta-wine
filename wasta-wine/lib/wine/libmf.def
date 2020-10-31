@@ -55,13 +55,13 @@ EXPORTS
   MFCreateProxyLocator@0 @50 PRIVATE
   MFCreateRemoteDesktopPlugin@0 @51 PRIVATE
   MFCreateSAMIByteStreamPlugin@0 @52 PRIVATE
-  MFCreateSampleCopierMFT@0 @53 PRIVATE
+  MFCreateSampleCopierMFT@4 @53
   MFCreateSampleGrabberSinkActivate@12 @54
   MFCreateSecureHttpSchemePlugin@0 @55 PRIVATE
   MFCreateSequencerSegmentOffset@0 @56 PRIVATE
   MFCreateSequencerSource@8 @57
   MFCreateSequencerSourceRemoteStream@0 @58 PRIVATE
-  MFCreateSimpleTypeHandler@0 @59 PRIVATE
+  MFCreateSimpleTypeHandler@4 @59
   MFCreateSourceResolver@4=mfplat.MFCreateSourceResolver @60
   MFCreateStandardQualityManager@4 @61
   MFCreateTopoLoader@4 @62
@@ -71,16 +71,16 @@ EXPORTS
   MFCreateTranscodeSinkActivate@0 @66 PRIVATE
   MFCreateTranscodeTopology@0 @67 PRIVATE
   MFCreateUrlmonSchemePlugin@0 @68 PRIVATE
-  MFCreateVideoRenderer@0 @69 PRIVATE
-  MFCreateVideoRendererActivate@0 @70 PRIVATE
+  MFCreateVideoRenderer@8 @69
+  MFCreateVideoRendererActivate@8 @70
   MFCreateWMAEncoderActivate@0 @71 PRIVATE
   MFCreateWMVEncoderActivate@0 @72 PRIVATE
   MFEnumDeviceSources@12 @73
   MFGetMultipleServiceProviders@0 @74 PRIVATE
   MFGetService@16 @75
   MFGetSupportedMimeTypes@4 @76
-  MFGetSupportedSchemes@0 @77 PRIVATE
-  MFGetTopoNodeCurrentType@0 @78 PRIVATE
+  MFGetSupportedSchemes@4 @77
+  MFGetTopoNodeCurrentType@16 @78
   MFReadSequencerSegmentOffset@0 @79 PRIVATE
   MFRequireProtectedEnvironment@0 @80 PRIVATE
   MFShutdownObject@4 @81

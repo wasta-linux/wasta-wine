@@ -128,42 +128,43 @@ EXPORTS
   NotifyAddrChange@8 @123
   NotifyIpInterfaceChange@20 @124
   NotifyRouteChange@8 @125
-  NotifyRouteChangeEx@0 @126 PRIVATE
-  NotifyUnicastIpAddressChange@20 @127
-  ParseNetworkString@20 @128
-  _PfAddFiltersToInterface@24@0 @129 PRIVATE
-  _PfAddGlobalFilterToInterface@8@0 @130 PRIVATE
-  _PfBindInterfaceToIPAddress@12@12=PfBindInterfaceToIPAddress @131
-  _PfBindInterfaceToIndex@16@0 @132 PRIVATE
-  _PfCreateInterface@24@24=PfCreateInterface @133
-  _PfDeleteInterface@4@4=PfDeleteInterface @134
-  _PfDeleteLog@0@0 @135 PRIVATE
-  _PfGetInterfaceStatistics@16@0 @136 PRIVATE
-  _PfMakeLog@4@0 @137 PRIVATE
-  _PfRebindFilters@8@0 @138 PRIVATE
-  _PfRemoveFilterHandles@12@0 @139 PRIVATE
-  _PfRemoveFiltersFromInterface@20@0 @140 PRIVATE
-  _PfRemoveGlobalFilterFromInterface@8@0 @141 PRIVATE
-  _PfSetLogBuffer@28@0 @142 PRIVATE
-  _PfTestPacket@20@0 @143 PRIVATE
-  _PfUnBindInterface@4@4=PfUnBindInterface @144
-  SendARP@16 @145
-  SetAdapterIpAddress@0 @146 PRIVATE
-  SetBlockRoutes@0 @147 PRIVATE
-  SetIfEntry@4 @148
-  SetIfEntryToStack@0 @149 PRIVATE
-  SetIpForwardEntry@4 @150
-  SetIpForwardEntryToStack@0 @151 PRIVATE
-  SetIpMultihopRouteEntryToStack@0 @152 PRIVATE
-  SetIpNetEntry@4 @153
-  SetIpNetEntryToStack@0 @154 PRIVATE
-  SetIpRouteEntryToStack@0 @155 PRIVATE
-  SetIpStatistics@4 @156
-  SetIpStatsToStack@0 @157 PRIVATE
-  SetIpTTL@4 @158
-  SetPerTcpConnectionEStats@24 @159
-  SetProxyArpEntryToStack@0 @160 PRIVATE
-  SetRouteWithRef@0 @161 PRIVATE
-  SetTcpEntry@4 @162
-  SetTcpEntryToStack@0 @163 PRIVATE
-  UnenableRouter@8 @164
+  NotifyRouteChange2@20 @126
+  NotifyRouteChangeEx@0 @127 PRIVATE
+  NotifyUnicastIpAddressChange@20 @128
+  ParseNetworkString@20 @129
+  _PfAddFiltersToInterface@24@0 @130 PRIVATE
+  _PfAddGlobalFilterToInterface@8@0 @131 PRIVATE
+  _PfBindInterfaceToIPAddress@12@12=PfBindInterfaceToIPAddress @132
+  _PfBindInterfaceToIndex@16@0 @133 PRIVATE
+  _PfCreateInterface@24@24=PfCreateInterface @134
+  _PfDeleteInterface@4@4=PfDeleteInterface @135
+  _PfDeleteLog@0@0 @136 PRIVATE
+  _PfGetInterfaceStatistics@16@0 @137 PRIVATE
+  _PfMakeLog@4@0 @138 PRIVATE
+  _PfRebindFilters@8@0 @139 PRIVATE
+  _PfRemoveFilterHandles@12@0 @140 PRIVATE
+  _PfRemoveFiltersFromInterface@20@0 @141 PRIVATE
+  _PfRemoveGlobalFilterFromInterface@8@0 @142 PRIVATE
+  _PfSetLogBuffer@28@0 @143 PRIVATE
+  _PfTestPacket@20@0 @144 PRIVATE
+  _PfUnBindInterface@4@4=PfUnBindInterface @145
+  SendARP@16 @146
+  SetAdapterIpAddress@0 @147 PRIVATE
+  SetBlockRoutes@0 @148 PRIVATE
+  SetIfEntry@4 @149
+  SetIfEntryToStack@0 @150 PRIVATE
+  SetIpForwardEntry@4 @151
+  SetIpForwardEntryToStack@0 @152 PRIVATE
+  SetIpMultihopRouteEntryToStack@0 @153 PRIVATE
+  SetIpNetEntry@4 @154
+  SetIpNetEntryToStack@0 @155 PRIVATE
+  SetIpRouteEntryToStack@0 @156 PRIVATE
+  SetIpStatistics@4 @157
+  SetIpStatsToStack@0 @158 PRIVATE
+  SetIpTTL@4 @159
+  SetPerTcpConnectionEStats@24 @160
+  SetProxyArpEntryToStack@0 @161 PRIVATE
+  SetRouteWithRef@0 @162 PRIVATE
+  SetTcpEntry@4 @163
+  SetTcpEntryToStack@0 @164 PRIVATE
+  UnenableRouter@8 @165

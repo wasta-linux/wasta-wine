@@ -32,8 +32,8 @@ EXPORTS
   D3DX11CreateTextureFromResourceW@0 @27 PRIVATE
   D3DX11CreateThreadPump@0 @28 PRIVATE
   D3DX11FilterTexture@16 @29
-  D3DX11GetImageInfoFromFileA@0 @30 PRIVATE
-  D3DX11GetImageInfoFromFileW@0 @31 PRIVATE
+  D3DX11GetImageInfoFromFileA@16 @30
+  D3DX11GetImageInfoFromFileW@16 @31
   D3DX11GetImageInfoFromMemory@20 @32
   D3DX11GetImageInfoFromResourceA@0 @33 PRIVATE
   D3DX11GetImageInfoFromResourceW@0 @34 PRIVATE
@@ -44,6 +44,6 @@ EXPORTS
   D3DX11PreprocessShaderFromResourceA@0 @39 PRIVATE
   D3DX11PreprocessShaderFromResourceW@0 @40 PRIVATE
   D3DX11SHProjectCubeMap@0 @41 PRIVATE
-  D3DX11SaveTextureToFileA@0 @42 PRIVATE
-  D3DX11SaveTextureToFileW@0 @43 PRIVATE
+  D3DX11SaveTextureToFileA@16 @42
+  D3DX11SaveTextureToFileW@16 @43
   D3DX11SaveTextureToMemory@20 @44

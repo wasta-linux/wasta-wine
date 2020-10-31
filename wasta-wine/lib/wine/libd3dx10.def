@@ -54,12 +54,12 @@ EXPORTS
   D3DX10CreateTextureFromResourceW@28 @49 PRIVATE
   D3DX10FilterTexture@12 @50
   D3DX10GetFeatureLevel1@8 @51
-  D3DX10GetImageInfoFromFileA@16 @52 PRIVATE
-  D3DX10GetImageInfoFromFileW@16 @53 PRIVATE
+  D3DX10GetImageInfoFromFileA@16 @52
+  D3DX10GetImageInfoFromFileW@16 @53
   D3DX10GetImageInfoFromMemory@20 @54
-  D3DX10GetImageInfoFromResourceA@20 @55 PRIVATE
-  D3DX10GetImageInfoFromResourceW@20 @56 PRIVATE
-  D3DX10LoadTextureFromTexture@12 @57 PRIVATE
+  D3DX10GetImageInfoFromResourceA@20 @55
+  D3DX10GetImageInfoFromResourceW@20 @56
+  D3DX10LoadTextureFromTexture@12 @57
   D3DX10PreprocessShaderFromFileA@24 @58 PRIVATE
   D3DX10PreprocessShaderFromFileW@24 @59 PRIVATE
   D3DX10PreprocessShaderFromMemory@36 @60

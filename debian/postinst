@@ -7,12 +7,6 @@ set -e
 
 case "$1" in
     configure)
-        # Call main postinst script.  Error in that script should NOT stop
-        #   postinst from completing.  We want to ensure that the package
-        #   installs even if the script fails.
-        #   If not, later updates to package won't install either because
-        #   the broken version will attempt to keep installing until manually
-        #   uninstalled.
         DIR=/opt/wasta-wine
         echo
         echo "*** Renaming .so-wasta files back to .so"

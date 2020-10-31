@@ -221,15 +221,15 @@ EXPORTS
   ASN1PEREncUnsignedShort@0 @216 PRIVATE
   ASN1PEREncZero@0 @217 PRIVATE
   ASN1PERFreeSeqOf@0 @218 PRIVATE
-  ASN1_CloseDecoder@0 @219 PRIVATE
+  ASN1_CloseDecoder@4 @219
   ASN1_CloseEncoder2@0 @220 PRIVATE
-  ASN1_CloseEncoder@0 @221 PRIVATE
-  ASN1_CloseModule@0 @222 PRIVATE
-  ASN1_CreateDecoder@0 @223 PRIVATE
+  ASN1_CloseEncoder@4 @221
+  ASN1_CloseModule@4 @222
+  ASN1_CreateDecoder@20 @223
   ASN1_CreateDecoderEx@0 @224 PRIVATE
-  ASN1_CreateEncoder@0 @225 PRIVATE
-  ASN1_CreateModule@0 @226 PRIVATE
-  ASN1_Decode@0 @227 PRIVATE
+  ASN1_CreateEncoder@20 @225
+  ASN1_CreateModule@36 @226
+  ASN1_Decode@24 @227
   ASN1_Encode@0 @228 PRIVATE
   ASN1_FreeDecoded@0 @229 PRIVATE
   ASN1_FreeEncoded@0 @230 PRIVATE

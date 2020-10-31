@@ -1,4 +1,4 @@
-.TH WINEGCC 1 "October 2005" "Wine 4.18" "Wine Developers Manual"
+.TH WINEGCC 1 "October 2005" "Wine 5.20" "Wine Developers Manual"
 .SH NAME
 winegcc \- Wine C and C++ MinGW Compatible Compiler
 .SH SYNOPSIS
@@ -59,6 +59,9 @@ Set the default entry point of the application to be the Unicode
 This option adds -lgdi32, -lcomdlg32, and -lshell32 to the list of
 default libraries, and passes '--subsystem windows' to winebuild
 to build graphical applications.
+.B \-munix
+Set when building the Unix counterpart of a builtin module.
+.TP
 .IP \fB-nodefaultlibs\fR
 Do not use the standard system libraries when linking. These
 include at a minimum -lkernel32, -luser32, -ladvapi32, and 

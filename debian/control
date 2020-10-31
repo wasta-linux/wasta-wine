@@ -9,7 +9,7 @@ Homepage: https://github.com/wasta-linux/wasta-wine
 Package: wasta-wine
 Architecture: all
 Pre-Depends: dpkg (>= 1.14.12ubuntu3)
-Depends: rename, libasound2:i386 (>= 1.0.16), libc6:i386 (>= 2.29), libfaudio0:i386 (>= 19.06.07), libglib2.0-0:i386 (>= 2.12.0), libgphoto2-6:i386 (>= 2.5.10), libgphoto2-port12:i386 (>= 2.5.10), libgstreamer-plugins-base1.0-0:i386 (>= 1.0.0), libgstreamer1.0-0:i386 (>= 1.12.0), liblcms2-2:i386 (>= 2.2+git20110628), libldap-2.4-2:i386 (>= 2.4.7), libmpg123-0:i386 (>= 1.13.7), libopenal1:i386 (>= 1.14), libpulse0:i386 (>= 0.99.1), libudev1:i386 (>= 183), libusb-1.0-0:i386 (>= 2:1.0.21), libvkd3d1:i386 (>= 1.0), libx11-6:i386, libxext6:i386, libxml2:i386 (>= 2.9.0), ocl-icd-libopencl1 | libopencl1:i386, ocl-icd-libopencl1:i386 (>= 1.0) | libopencl-1.1-1:i386, libasound2-plugins:i386, libncurses6:i386 | libncurses5:i386 | libncurses:i386
+Depends: rename, libasound2:i386 (>= 1.0.16), libc6:i386 (>= 2.29), libfaudio0:i386 (>= 19.06.07), libglib2.0-0:i386 (>= 2.12.0), libgphoto2-6:i386 (>= 2.5.10), libgphoto2-port12:i386 (>= 2.5.10), libgstreamer-plugins-base1.0-0:i386 (>= 1.0.0), libgstreamer1.0-0:i386 (>= 1.4.0), liblcms2-2:i386 (>= 2.2+git20110628), libldap-2.4-2:i386 (>= 2.4.7), libmpg123-0:i386 (>= 1.13.7), libopenal1:i386 (>= 1.14), libpulse0:i386 (>= 0.99.1), libudev1:i386 (>= 183), libusb-1.0-0:i386 (>= 2:1.0.21), libvkd3d1:i386 (>= 1.0), libx11-6:i386, libxext6:i386, libxml2:i386 (>= 2.9.0), libasound2-plugins:i386, libncurses6:i386 | libncurses5:i386 | libncurses:i386
 Recommends: winbind, libcairo2:i386, libcap2-bin:i386, libcapi20-3:i386, libcups2:i386, libdbus-1-3:i386, libfontconfig1:i386, libfreetype6:i386, libglu1-mesa:i386 | libglu1:i386, libgnutls30:i386 | libgnutls-deb0-28:i386 | libgnutls26:i386, libgsm1:i386, libgssapi-krb5-2:i386, libgtk-3-0:i386, libjpeg8:i386 | libjpeg62-turbo:i386, libkrb5-3:i386, libodbc1:i386, libosmesa6:i386, libpcap0.8:i386, libpng16-16 | libpng12-0:i386, libsane:i386 | libsane1:i386, libsdl2-2.0-0:i386, libtiff5:i386, libv4l-0:i386, libva-drm2:i386 | libva-drm1:i386, libva-x11-2:i386 | libva-x11-1:i386, libva2:i386 | libva1:i386, libxcomposite1:i386, libxcursor1:i386, libxfixes3:i386, libxi6:i386, libxinerama1:i386, libxrandr2:i386, libxrender1:i386, libxslt1.1:i386, libxxf86vm1:i386
 Description: Wasta packaging of WINE for application stability
  A stable version of WINE is preferred so that any user-level wine updates will
@@ -36,4 +36,4 @@ Description: Wasta packaging of WINE for application stability
  .
  To set the Dependencies and Recommends for wine, reference those listed at
  https://dl.winehq.org/wine-builds/ubuntu/dists/focal/main/binary-i386/Packages
- for the wine-staging for the desired wine version.
+ for the wine-staging-i386 package dependencies for the desired wine version.

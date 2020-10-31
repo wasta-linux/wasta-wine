@@ -280,7 +280,7 @@ EXPORTS
   FlsFree@4 @275
   FlsGetValue@4 @276
   FlsSetValue@8 @277
-  FlushConsoleInputBuffer@4=kernel32.FlushConsoleInputBuffer @278
+  FlushConsoleInputBuffer@4 @278
   FlushFileBuffers@4 @279
   FlushInstructionCache@12 @280
   FlushProcessWriteBuffers@0=ntdll.NtFlushProcessWriteBuffers @281
@@ -893,7 +893,7 @@ EXPORTS
   QuirkIsEnabled3@8 @888
   RaiseException@16 @889
   ReOpenFile@16 @890
-  ReadConsoleA@20=kernel32.ReadConsoleA @891
+  ReadConsoleA@20 @891
   ReadConsoleInputA@16 @892
   ReadConsoleInputExA@0 @893 PRIVATE
   ReadConsoleInputExW@0 @894 PRIVATE
@@ -903,7 +903,7 @@ EXPORTS
   ReadConsoleOutputCharacterA@20 @898
   ReadConsoleOutputCharacterW@20 @899
   ReadConsoleOutputW@20 @900
-  ReadConsoleW@20=kernel32.ReadConsoleW @901
+  ReadConsoleW@20 @901
   ReadDirectoryChangesW@32 @902
   ReadFile@20 @903
   ReadFileEx@20 @904
@@ -1283,7 +1283,7 @@ EXPORTS
   WideCharToMultiByte@32 @1278
   Wow64DisableWow64FsRedirection@4 @1279
   Wow64RevertWow64FsRedirection@4 @1280
-  WriteConsoleA@20=kernel32.WriteConsoleA @1281
+  WriteConsoleA@20 @1281
   WriteConsoleInputA@16 @1282
   WriteConsoleInputW@16 @1283
   WriteConsoleOutputA@20 @1284
@@ -1291,7 +1291,7 @@ EXPORTS
   WriteConsoleOutputCharacterA@20 @1286
   WriteConsoleOutputCharacterW@20 @1287
   WriteConsoleOutputW@20 @1288
-  WriteConsoleW@20=kernel32.WriteConsoleW @1289
+  WriteConsoleW@20 @1289
   WriteFile@20 @1290
   WriteFileEx@20 @1291
   WriteFileGather@20 @1292

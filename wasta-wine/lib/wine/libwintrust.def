@@ -33,10 +33,10 @@ EXPORTS
   CryptCATGetMemberInfo@8 @28
   CryptCATHandleFromStore@0 @29 PRIVATE
   CryptCATOpen@20 @30
-  CryptCATPersistStore@0 @31 PRIVATE
-  CryptCATPutAttrInfo@0 @32 PRIVATE
-  CryptCATPutCatAttrInfo@0 @33 PRIVATE
-  CryptCATPutMemberInfo@0 @34 PRIVATE
+  CryptCATPersistStore@4 @31
+  CryptCATPutAttrInfo@24 @32
+  CryptCATPutCatAttrInfo@20 @33
+  CryptCATPutMemberInfo@28 @34
   CryptCATStoreFromHandle@0 @35 PRIVATE
   CryptCATVerifyMember@0 @36 PRIVATE
   CryptSIPCreateIndirectData@12 @37

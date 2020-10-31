@@ -415,7 +415,7 @@ EXPORTS
   FlsGetValue@4 @434
   FlsSetValue@8 @435
   FlushConsoleInputBuffer@4 @436
-  FlushFileBuffers@4=KERNEL32_FlushFileBuffers @437
+  FlushFileBuffers@4 @437
   FlushInstructionCache@12 @438
   FlushProcessWriteBuffers@0=ntdll.NtFlushProcessWriteBuffers @439
   FlushViewOfFile@8 @440
